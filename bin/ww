@@ -1,0 +1,25 @@
+#!/usr/bin/env ruby
+
+require 'optparse'
+require 'word_wrap'
+
+options = {:width => 80, :spaces => false}
+OptionParser.new do |opts|
+  opts.banner = "Usage: ww [OPTIONS] [input-file]"
+
+  opts.on("-s", "--keep-spaces", "Keep all whitespace between words") do |s|
+    options[:spaces] = s
+  end
+
+  opts.on("-w", "--width COLUMNS", "Set line width (defaults to 80)") do |w|
+    options[:width] = w.to_i
+  end
+end.parse!
+
+if ARGV.length > 0
+  File.open(ARGV[0], "r") do |f|
+    print WordWrap::ww f.read, options[:width], options[:spaces]
+  end
+else
+  print WordWrap::ww STDIN.read, options[:width], options[:spaces]
+end
