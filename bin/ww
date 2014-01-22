@@ -3,12 +3,12 @@
 require 'optparse'
 require 'word_wrap'
 
-options = {:width => 80, :spaces => false}
+options = {:width => 80, :fit => false}
 OptionParser.new do |opts|
   opts.banner = "Usage: ww [OPTIONS] [input-file]"
 
-  opts.on("-s", "--keep-spaces", "Keep all whitespace between words") do |s|
-    options[:spaces] = s
+  opts.on("-f", "--fit", "Fit precisely to the defined width") do |f|
+    options[:fit] = f
   end
 
   opts.on("-w", "--width COLUMNS", "Set line width (defaults to 80)") do |w|
@@ -18,8 +18,8 @@ end.parse!
 
 if ARGV.length > 0
   File.open(ARGV[0], "r") do |f|
-    print WordWrap::ww f.read, options[:width], options[:spaces]
+    print WordWrap::ww f.read, options[:width], options[:fit]
   end
 else
-  print WordWrap::ww STDIN.read, options[:width], options[:spaces]
+  print WordWrap::ww STDIN.read, options[:width], options[:fit]
 end
