@@ -13,7 +13,7 @@ Gem::Specification.new do |spec|
                           word-wrapping plain-text files. As simple as
                           it gets. You can also use it in your Ruby
                           scripts - check out the sources for help.}
-  spec.homepage      = "http://linuxwell.com/ww"
+  spec.homepage      = "https://github.com/pazdera/word_wrap"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
