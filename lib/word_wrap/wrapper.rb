@@ -1,5 +1,7 @@
-# Wrapping implementation
+# Copyright (c) 2014 Radek Pazdera
+# Distributed under the MIT License
 
+# The actual implementation of wrapping
 # TODO: share code between wrap and fit implementations
 
 module WordWrap

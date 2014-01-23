@@ -1,3 +1,8 @@
+# Copyright (c) 2014 Radek Pazdera
+# Distributed under the MIT License
+
+# Several tests for the ww function
+
 require "word_wrap"
 
 describe WordWrap do

@@ -1,5 +1,8 @@
 #!/usr/bin/env ruby
 
+# Copyright (c) 2014 Radek Pazdera
+# Distributed under the MIT License
+
 require 'optparse'
 require 'word_wrap'
 

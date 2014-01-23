@@ -1,3 +1,6 @@
+# Copyright (c) 2014 Radek Pazdera
+# Distributed under the MIT License
+
 require "word_wrap/version"
 require "word_wrap/wrapper"
 
