@@ -11,7 +11,11 @@ module WordWrap
 end
 
 class String
-  def ww(width=DEFAULT_WIDTH, fit=false)
-    WordWrap.ww(self, width, fit)
+  def wrap(width=DEFAULT_WIDTH)
+    WordWrap.ww(self, width, false)
+  end
+
+  def fit(width=DEFAULT_WIDTH)
+    WordWrap.ww(self, width, true)
   end
 end
