@@ -9,10 +9,9 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Radek Pazdera"]
   spec.email         = ["radek@pazdera.co.uk"]
   spec.summary       = %q{Simple tool for word-wrapping text}
-  spec.description   = %q{This gem contains a very simple CLI tool for
-                          word-wrapping plain-text files. As simple as
-                          it gets. You can also use it in your Ruby
-                          scripts - check out the sources for help.}
+  spec.description   = %q{As simple as it gets CLI tool for word-wrapping
+                          plain-text. You can also use the library in your
+                          Ruby scripts. Check out the sources for details.}
   spec.homepage      = "https://github.com/pazdera/word_wrap"
   spec.license       = "MIT"
 
