@@ -44,7 +44,7 @@ only two arguments:
 
 The example file looks like this:
 ```bash
-cat hip.txt
+$ cat hip.txt
 Forage Shoreditch disrupt Pitchfork meh.
 
 Mustache 3 wolf moon gluten-free whatever master burn
@@ -52,7 +52,7 @@ vinyl.
 ```
 
 ```bash
-ww -w20 hip.txt
+$ ww -w20 hip.txt
 Forage Shoreditch
 disrupt Pitchfork
 meh.
@@ -65,7 +65,7 @@ vinyl.
 
 But you can also use stdin:
 ```bash
-cat hip | ww -w20
+$ cat hip | ww -w20
 Forage Shoreditch
 disrupt Pitchfork
 meh.
@@ -78,7 +78,7 @@ vinyl.
 
 Note the difference at end of the second paragraph:
 ```bash
-cat hip | ww -w20
+$ cat hip | ww -w20 -f
 Forage Shoreditch
 disrupt Pitchfork
 meh.
