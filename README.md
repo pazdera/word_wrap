@@ -39,6 +39,7 @@ only two arguments:
                 predefined width, in addition to wrapping the lines that exceed
                 it. This option is generally better for plain text. For code,
                 however, it will mess up your indentation.
+
 #### Examples
 
 The example file looks like this:
@@ -96,7 +97,7 @@ If you would like to use the library in Ruby, you have two options:
 * Use the `String#wrap` and `String#fit` functions this module adds to the
   standard `String` class.
 
-#### Example
+#### Examples
 
 ```irb
 irb(main):001:0> require 'word_wrap'
