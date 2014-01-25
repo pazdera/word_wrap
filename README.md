@@ -43,6 +43,7 @@ only two arguments:
 #### Examples
 
 The example file looks like this:
+
 ```bash
 $ cat hip.txt
 Forage Shoreditch disrupt Pitchfork meh.
@@ -64,6 +65,7 @@ vinyl.
 ```
 
 But you can also use stdin:
+
 ```bash
 $ cat hip | ww -w20
 Forage Shoreditch
@@ -77,6 +79,7 @@ vinyl.
 ```
 
 Note the difference at end of the second paragraph:
+
 ```bash
 $ cat hip | ww -w20 -f
 Forage Shoreditch
