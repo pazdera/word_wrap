@@ -1,5 +1,7 @@
 # WordWrap
 
+[![Gem Version](https://badge.fury.io/rb/word_wrap.png)](http://badge.fury.io/rb/word_wrap)
+
 This gem is a extremely simple tool to word-wrap texts, which is the one an
 only thing it can do. It comes with a script called `ww` that you can use
 in the command line. And of course, you can get the functionality from within
