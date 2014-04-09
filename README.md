@@ -90,8 +90,7 @@ meh.
 
 Mustache 3 wolf moon
 gluten-free whatever
-master burn
-vinyl.
+master burn vinyl.
 ```
 
 ### Ruby library
