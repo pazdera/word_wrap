@@ -18,7 +18,15 @@ class String
     WordWrap.ww(self, width, false)
   end
 
+  def wrap!(width=DEFAULT_WIDTH)
+    replace wrap(width)
+  end
+
   def fit(width=DEFAULT_WIDTH)
     WordWrap.ww(self, width, true)
+  end
+
+  def fit!(width=DEFAULT_WIDTH)
+    replace fit(width)
   end
 end
