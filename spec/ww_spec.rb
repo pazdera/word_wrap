@@ -151,7 +151,7 @@ EOF
       wrapped = WordWrap.ww(text, 10, true)
       wrapped.should eql expected
     end
-    
+
     it "works without breaks" do
       text =<<EOF
 0123456789012345678 9
@@ -267,6 +267,28 @@ Mumblecore
 letterpress iPhone.
 EOF
       text.fit(20).should eql expected
+    end
+
+    it "wraps in-place" do
+      text = "0123456789 01234 0123456"
+      expected =<<EOF
+0123456789
+01234
+0123456
+EOF
+      text.wrap! 10
+      text.should eql expected
+    end
+
+    it "fits in-place" do
+      text = "0123456789 01234 0123456"
+      expected =<<EOF
+0123456789
+01234
+0123456
+EOF
+      text.fit! 10
+      text.should eql expected
     end
   end
 end
