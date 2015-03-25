@@ -1,10 +1,9 @@
-# Copyright (c) 2014 Radek Pazdera
+# Copyright (c) 2014, 2015  Radek Pazdera
 # Distributed under the MIT License
 
-# Several tests for the ww function
+# Tests for the ww function
 
 require 'word_wrap'
-require 'word_wrap/core_ext'
 
 describe WordWrap do
   describe "#ww" do
@@ -251,45 +250,6 @@ extremelylonganduglyword
 EOF
       wrapped = WordWrap.ww(text, 20, true)
       expect(wrapped).to eql expected
-    end
-
-    it "fit as a part of String interface" do
-      text =<<EOF
-Try-hard 3 wolf moon vinyl.
-
-Mumblecore letterpress iPhone.
-EOF
-
-      expected =<<EOF
-Try-hard 3 wolf moon
-vinyl.
-
-Mumblecore
-letterpress iPhone.
-EOF
-      expect(text.fit(20)).to eql expected
-    end
-
-    it "wraps in-place" do
-      text = "0123456789 01234 0123456"
-      expected =<<EOF
-0123456789
-01234
-0123456
-EOF
-      text.wrap! 10
-      expect(text).to eql expected
-    end
-
-    it "fits in-place" do
-      text = "0123456789 01234 0123456"
-      expected =<<EOF
-0123456789
-01234
-0123456
-EOF
-      text.fit! 10
-      expect(text).to eql expected
     end
   end
 end
