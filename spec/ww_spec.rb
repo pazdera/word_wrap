@@ -3,7 +3,8 @@
 
 # Several tests for the ww function
 
-require "word_wrap"
+require 'word_wrap'
+require 'word_wrap/core_ext'
 
 describe WordWrap do
   describe "#ww" do
@@ -15,7 +16,7 @@ describe WordWrap do
 0123456
 EOF
       wrapped = WordWrap.ww(text, 10)
-      wrapped.should eql expected
+      expect(wrapped).to eql expected
     end
 
     it "works without breaks" do
@@ -31,7 +32,7 @@ EOF
 0123456
 EOF
       wrapped = WordWrap.ww(text, 10)
-      wrapped.should eql expected
+      expect(wrapped).to eql expected
     end
 
     it "wraps two paragraphs" do
@@ -59,7 +60,7 @@ distillery cray
 semiotics.
 EOF
       wrapped = WordWrap.ww(text, 20)
-      wrapped.should eql expected
+      expect(wrapped).to eql expected
     end
 
     it "wraps a partialy wrapped paragraph" do
@@ -84,7 +85,7 @@ out pop-up direct
 trade.
 EOF
       wrapped = WordWrap.ww(text, 20)
-      wrapped.should eql expected
+      expect(wrapped).to eql expected
     end
 
     it "wrapping keeps whitespace" do
@@ -121,7 +122,7 @@ extremelylonganduglyword
 
 EOF
       wrapped = WordWrap.ww(text, 20)
-      wrapped.should eql expected
+      expect(wrapped).to eql expected
     end
 
     it "wrap as a part of String interface" do
@@ -138,7 +139,7 @@ moon vinyl.
 Mumblecore
 letterpress iPhone.
 EOF
-      text.wrap(20).should eql expected
+      expect(text.wrap(20)).to eql expected
     end
 
     it "fits a single line correctly" do
@@ -149,7 +150,7 @@ EOF
 0123456
 EOF
       wrapped = WordWrap.ww(text, 10, true)
-      wrapped.should eql expected
+      expect(wrapped).to eql expected
     end
 
     it "works without breaks" do
@@ -164,7 +165,7 @@ EOF
 0123456
 EOF
       wrapped = WordWrap.ww(text, 10, true)
-      wrapped.should eql expected
+      expect(wrapped).to eql expected
     end
 
     it "fits two paragraphs" do
@@ -191,7 +192,7 @@ distillery cray
 semiotics.
 EOF
       wrapped = WordWrap.ww(text, 20, true)
-      wrapped.should eql expected
+      expect(wrapped).to eql expected
     end
 
     it "fits a partialy wrapped paragraph" do
@@ -214,7 +215,7 @@ they sold out pop-up
 direct trade.
 EOF
       wrapped = WordWrap.ww(text, 20, true)
-      wrapped.should eql expected
+      expect(wrapped).to eql expected
     end
 
     it "fitting keeps empty lines" do
@@ -249,7 +250,7 @@ extremelylonganduglyword
 
 EOF
       wrapped = WordWrap.ww(text, 20, true)
-      wrapped.should eql expected
+      expect(wrapped).to eql expected
     end
 
     it "fit as a part of String interface" do
@@ -266,7 +267,7 @@ vinyl.
 Mumblecore
 letterpress iPhone.
 EOF
-      text.fit(20).should eql expected
+      expect(text.fit(20)).to eql expected
     end
 
     it "wraps in-place" do
@@ -277,7 +278,7 @@ EOF
 0123456
 EOF
       text.wrap! 10
-      text.should eql expected
+      expect(text).to eql expected
     end
 
     it "fits in-place" do
@@ -288,7 +289,7 @@ EOF
 0123456
 EOF
       text.fit! 10
-      text.should eql expected
+      expect(text).to eql expected
     end
   end
 end
