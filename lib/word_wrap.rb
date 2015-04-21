@@ -12,21 +12,3 @@ module WordWrap
     fit ? w.fit : w.wrap
   end
 end
-
-class String
-  def wrap(width=WordWrap::DEFAULT_WIDTH)
-    WordWrap.ww(self, width, false)
-  end
-
-  def wrap!(width=WordWrap::DEFAULT_WIDTH)
-    replace wrap(width)
-  end
-
-  def fit(width=WordWrap::DEFAULT_WIDTH)
-    WordWrap.ww(self, width, true)
-  end
-
-  def fit!(width=WordWrap::DEFAULT_WIDTH)
-    replace fit(width)
-  end
-end

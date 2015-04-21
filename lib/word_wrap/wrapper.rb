@@ -1,10 +1,12 @@
-# Copyright (c) 2014 Radek Pazdera
+#
+# wrapper.rb
+#
+# Copyright (c) 2014, 2015  Radek Pazdera
 # Distributed under the MIT License
-
-# The actual implementation of wrapping
-# TODO: share code between wrap and fit implementations
+#
 
 module WordWrap
+  # TODO: Refactor similar passages out of the two functions into a common one
   class Wrapper
     def initialize(text, width)
       @text = text
@@ -14,7 +16,6 @@ module WordWrap
     def fit
       lines = []
       next_line = ""
-      continued = false
       @text.lines do |line|
         line.chomp! "\n"
         if line.length == 0
