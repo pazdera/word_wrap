@@ -101,19 +101,28 @@ If you would like to use the library in Ruby, you have two options:
 * Use the `String#wrap` and `String#fit` functions this module adds to the
   standard `String` class.
 
+**Important:** Since version 1.0.0 the extensions of the `String` class will be only available when explicitely loaded via
+
+```ruby
+require 'word_wrap/core_ext'
+```
+
 #### Examples
 
 ```irb
 irb(main):001:0> require 'word_wrap'
 => true
 
-irb(main):002:0> WordWrap.ww "123 456 789", 5
+irb(main):003:0> WordWrap.ww "123 456 789", 5
 => "123\n456\n789\n"
 
-irb(main):003:0> "123 456 789".wrap 5
+irb(main):002:0> require 'word_wrap/core_ext'
+=> true
+
+irb(main):004:0> "123 456 789".wrap 5
 => "123\n456\n789\n"
 
-irb(main):004:0> "123 456 789".fit 8
+irb(main):005:0> "123 456 789".fit 8
 => "123 456\n789\n"
 ```
 
